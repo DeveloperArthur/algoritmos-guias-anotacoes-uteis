@@ -1,0 +1,19 @@
+- cria uma imagem docker do projeto (na maquina onde ele funciona)
+
+- sobe um container docker da imagem do projeto
+espelhando a pasta app do docker com a pasta do projeto que nao funciona:
+
+	docker run --rm -it -v "C:\Users\Arthur 2\projetos\integracao-ipsis:/usr/src/app" thimfont/build-ipsis:1.0
+
+- executa o mvn package, pois isso gera a pasta target com todos 
+os arquivos compilados e gera um arquivo .war da aplicação:
+
+	mvn clean package -DskipTests
+
+- sobe um container docker da imagem do tomcat, setando a porta 8080 e 
+setando o arquivo .war gerado na pasta do projeto:
+
+	docker run --rm -v "C:\Users\Arthur 2\projetos\integracao-ipsis\target\integracao-0.0.1-SNAPSHOT.war:/usr/local/tomcat/webapps/myapp.war" -it -p 8080:8080 tomcat:8.5
+
+resumidamente: primeiro comando será só para buildar a imagem pra gerar o .war, 
+depois sobe um container tomcat setando esse .war
