@@ -31,7 +31,7 @@
 
 - builda a imagem docker
 
-	docker build -t build-hello
+	docker build -t build-hello .
 	
 - sobe a imagem no docker hub
 
