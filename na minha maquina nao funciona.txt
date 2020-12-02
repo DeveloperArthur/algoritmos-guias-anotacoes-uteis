@@ -29,6 +29,16 @@
 
 	WORKDIR /usr/src/app/src
 
+- builda a imagem docker
+
+	docker build -t build-hello
+	
+- sobe a imagem no docker hub
+
+	docker login
+	docker tag build-hello arthur/build-hello:1.0
+	docker push arthur/build-hello:1.0
+
 - sobe um container docker da imagem do projeto
 espelhando a pasta app do docker com a pasta do projeto que nao funciona:
 
