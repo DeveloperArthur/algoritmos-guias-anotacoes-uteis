@@ -39,7 +39,7 @@
 	docker tag build-hello arthur/build-hello:1.0
 	docker push arthur/build-hello:1.0
 
-- sobe um container docker da imagem do projeto
+- cria um container docker da imagem do projeto
 espelhando a pasta app do docker com a pasta do projeto que nao funciona:
 
 	docker run --rm -it -v "C:\Users\Arthur\projetos\hello-world:/usr/src/app" arthur/build-hello:1.0
@@ -49,7 +49,7 @@ os arquivos compilados e gera um arquivo .war da aplicação:
 
 	mvn clean package -DskipTests
 
-- sobe um container docker da imagem do tomcat, setando a porta 8080 e 
+- cria um container tomcat, setando a porta 8080 e 
 setando o arquivo .war gerado na pasta do projeto:
 
 	docker run --rm -v "C:\Users\Arthur\projetos\hello-world\target\hello-0.0.1-SNAPSHOT.war:/usr/local/tomcat/webapps/myapp.war" -it -p 8080:8080 tomcat:8.5
