@@ -1,0 +1,46 @@
+Voltar a versão no bitbucket
+git reset --hard commitID
+git push origin branchName --force
+
+----------------------------------------------------------------------
+obter a estrutura do repositorio = git clone URL
+
+adicionar arquivos = git add
+
+mostra quais arquivos estão em quais estados = git status
+
+salva alterações = git commit -m ''
+
+publicar alteracoes = git push
+
+mudar de branch = git checkout nome-do-branch
+
+criar branch = git checkout -b nome-do-branch-novo
+
+fundir branchs, resolução de conflitos = git merge
+
+inicia um repositorio = git init
+
+atualizar repositorio local conforme esta o remoto = git pull
+
+mostra o historico de alteracoes = git log
+
+deletar branch = git branch -D <nome-do-branch>
+
+----------------------------------------------------------------------
+feat: (novo recurso para o usuário, não um novo recurso para o script de construção)
+
+fix: (correção de bug para o usuário, não uma correção para um script de construção)
+
+docs: (alterações na documentação)
+
+style: (formatação, ponto e vírgula ausente, etc.; nenhuma alteração no código de produção)
+
+refact: (refatorando o código de produção, por exemplo, renomeando uma variável)
+
+test: (adicionando testes ausentes, refatorando testes; nenhuma alteração no código de produção)
+
+tarefa: (atualização de tarefas difíceis, etc; nenhuma alteração no código de produção)
+-------------------------------------------------------------------------
+
+documentacao git: https://git-scm.com/docs

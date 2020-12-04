@@ -1,0 +1,4 @@
+Herança = extends
+Encapsulamento = private/get and set
+Abstração = entidade/classe, atributos e métodos
+Polimorfismo = @Override (Capacidade de uma mesma funcionalidade assumir comportamentos distintos)

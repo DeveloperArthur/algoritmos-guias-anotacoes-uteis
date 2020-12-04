@@ -1,0 +1,8 @@
+@Service
+essa anotação é utilizada na implementação da service
+
+@Repository
+essa anotação é utilizada na implementação do repository
+
+@Controller
+essa anotação é utilizada na controller
