@@ -1,0 +1,31 @@
+imagine que vc tem no seu sistema, para cada operacao no banco, um log... 
+entao, imagine que pra deletar um usuario vc tenha:
+
+metodo deletaUsuario(id){
+  logRepository.salvaRegistro("DELETANDO USUARIO "+id+" NO DIA "+data);
+  usuarioRepository.deleta(id);
+}
+
+o que vai acontecer se der um erro no metodo deleta? Na linha 6, o usuario nao sera 
+salvo MAS o log sera salvo... Teremos inconcistencia no banco de dados...
+
+isso acontece porque, para cada transição no banco de dados, por baixo dos panos
+o spring utiliza begin(), ação, commit();
+
+entao ele commitou a transicao do log mas deu rollback no usuario... 
+causando a inconcistencia.
+
+para corrigir isso, seria interessante dizer pro spring usar as duas queries
+na mesma transcicao, ou seja, por baixo dos panos ele fará
+begin(), ação do log, acao de delete, commit()
+
+assim, quando por exemplo o delete do usuario der erro, ele nem vai ter
+commitado a operacao do log, o log tambem nao tera sido salvo
+
+pra que isso aconteca basta usar anotacao @Transaction, o metodo ficara assim:
+
+@Transaction
+metodo deletaUsuario(id){
+  logRepository.salvaRegistro("DELETANDO USUARIO "+id+" NO DIA "+data);
+  usuarioRepository.deleta(id);
+}
