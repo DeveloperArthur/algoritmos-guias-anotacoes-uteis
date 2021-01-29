@@ -1,0 +1,2 @@
+configurando cloud code
+files > settings > plugins > cloud code
