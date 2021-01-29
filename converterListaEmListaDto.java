@@ -1,0 +1,1 @@
+lista.stream().map(ListaDto::new).collect(Collectors.toList());
