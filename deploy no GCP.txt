@@ -1,0 +1,4 @@
+application.properties = develop
+appengine-web.xml = backend-dev
+
+Tools > Cloud code > app engine > deploy to app engine
