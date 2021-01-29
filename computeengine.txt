@@ -1,0 +1,8 @@
+no compute engine, criou uma VM
+via linha de comando, instalou tomcat nessa VM
+o tomcat está na VM, gerou .war da aplicação
+enviar .war para a VM tomcat
+move o .war para uma pasta especifica do tomcat, por exemplo
+app/lib/web-inf/webapps
+e pronto, o tomcat vai descompactar o .war
+e vai subir a aplicação no compute engine
