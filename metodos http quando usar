@@ -1,0 +1,16 @@
+URL: /recurso/id
+GET
+PathVariable
+
+URL: /recurso/busca?id=1&nome="Arthur"
+GET
+RequestParam
+
+URL: /recurso
+POST
+RequestBody
+{
+	"id" : 1,
+	"nome":"Arthur"
+	
+}
