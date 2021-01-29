@@ -1,0 +1,1 @@
+promocoes.stream().map(PromocaoDto::new).collect(Collectors.toList())
