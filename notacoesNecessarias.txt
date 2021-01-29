@@ -1,0 +1,4 @@
+@Service = serviceimpl
+@Component = dao
+@Controller = controller
+@Repository = repository
