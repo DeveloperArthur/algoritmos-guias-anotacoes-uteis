@@ -1,9 +1,0 @@
-ScheduleAccount sc = new ScheduleAccount();
-
-String segundo = '0';
-String minuto = '40';
-String hora = '15';
-String dia = '23';
-
-String tempo = segundo+' '+minuto+' '+hora+' '+dia+' * ?';
-System.schedule('job teste integracao', tempo, sc);
