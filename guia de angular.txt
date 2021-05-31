@@ -1,3 +1,6 @@
+instalar npm e angular cli
+instalar extensao material icon themes no vs code
+
 main.ts é o arquivo principal, ele carrega o AppModule e o AppModule vai carregar o AppComponent.
 O arquivo index.html tem um seletor <app-root>, é exatamente o seletor do AppComponent
 
