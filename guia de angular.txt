@@ -1,0 +1,58 @@
+main.ts é o arquivo principal, ele carrega o AppModule e o AppModule vai carregar o AppComponent.
+O arquivo index.html tem um seletor <app-root>, é exatamente o seletor do AppComponent
+
+criar um novo projeto: ng new nome-projeto --minimal
+criar component: ng g c path-arquivo/nome-component
+criar service: ng g s path-arquivo/nome-service
+
+criar pipe: ng g p path-arquivo/nome-pipe
+instalar moment: npm i moment
+exemplo:
+import { Pipe, PipeTransform } from '@angular/core';
+import * as moment from 'moment';
+
+@Pipe({
+  name: 'localDate'
+})
+export class LocalDatePipe implements PipeTransform {
+
+  transform(date: string): string {
+    let dateOut: moment.Moment = moment(date, "YYYY-MM-DD");
+    return dateOut.format("DD/MM/YYYY");
+  }
+
+}
+
+depois de criar o pipe basta adicionar um "| nome-pipe" no campo data que deseja utilizar o pipe
+
+criar model: manualmente, exemplo:
+export class EnderecoDto {
+    logradouro:string;
+    bairro: string;
+    localidade: string;
+}
+
+executar aplicação: npm start
+
+
+#SETUP
+dentro do app angular.json: Mudar a propriedade inlineTemplate e inlineStyle para FALSE
+
+dentro de app.component.ts: apagar as propriedades template e styles, e adicionar uma propriedade chamada templateUrl com o valor 'app.component.html'
+
+apagar a variavel dentro da classe AppComponent
+
+criar um arquivo chamado app.component.html dentro da pasta 'app'
+
+instalar angular material no projeto: ng add @angular/material
+
+
+#ROTAS
+caso queira fazer rotas entre telas, tem q adicionar o seletor <router-outlet> no html que deseja utilizar a rota, depois ir em app-routing.module.ts e adicionar o component
+
+#PWA
+para criar uma PWA, basta rodar o comando ng add @angular/pwa
+mas para executar a aplicação, terá que executar esses comandos: 
+ng build --prod
+cd .\dist\NOME-PROJETO\
+npx serve
