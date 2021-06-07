@@ -1,6 +1,6 @@
 public class GoogleCalendar implements CalendarRepository {
     private String ENDPOINT = 'https://www.googleapis.com/calendar/v3/calendars/en.brazilian%23holiday%40group.v.calendar.google.com/events?key=';
-    private String API_KEY = 'AIzaSyA7OGsJZ1eWv5cd0yMK-48aDarqCzIPqYM';
+    private String API_KEY = '123456';
     
     public FeriadoDto buscaFeriados(){
         HttpRequest requisicao = new HttpRequest();
