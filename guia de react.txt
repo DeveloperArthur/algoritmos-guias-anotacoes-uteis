@@ -1,0 +1,9 @@
+instalar npm
+
+no body do index.html tem uma div com id "root"
+no arquivo index.js tem o react renderizando o componente "App" no id "root"
+no arquivo App.js tem o arquivo react
+
+criar um novo projeto: npx create-react-app nome-projeto
+
+executar aplicação: npm start
