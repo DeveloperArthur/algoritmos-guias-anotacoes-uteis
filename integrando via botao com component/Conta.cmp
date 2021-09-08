@@ -1,0 +1,10 @@
+<aura:component controller="EnviaContaPorBotao" implements="lightning:availableForFlowScreens,lightning:isUrlAddressable,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+	<aura:handler name="init" action="{!c.integraConta}" value="{!this}"/>
+    <aura:attribute name="loading" type="Boolean" default="false" />
+    
+    <lightning:card>
+        <aura:if isTrue="{!v.loading}">
+            <lightning:spinner alternativeText="Carregando" />
+        </aura:if>
+    </lightning:card>
+</aura:component>
