@@ -23,8 +23,8 @@ public class ConexaoSalesforceFactory {
             ConnectorConfig config = new ConnectorConfig();
             config.setUsername(credencial.getUsuario());
             config.setPassword(credencial.getSenha());
-            config.setAuthEndpoint("https://test.salesforce.com/services/Soap/c/47.0/0DF3K0000008OJm");
-            config.setServiceEndpoint("https://test.salesforce.com/services/Soap/c/47.0/0DF3K0000008OJm");
+            config.setAuthEndpoint("https://test.salesforce.com/services/Soap/c/47.0/codigo");
+            config.setServiceEndpoint("https://test.salesforce.com/services/Soap/c/47.0/codigo");
             EnterpriseConnection enterpriseConnection = Connector.newConnection(config);
             return enterpriseConnection;
 
