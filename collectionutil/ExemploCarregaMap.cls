@@ -1,4 +1,4 @@
-public class Exemplo {
+public class ExemploCarregaMap {
     public static void processa(List<Contact> contatos){
         
         Set<Id> setIdContas = new Set<Id>();
