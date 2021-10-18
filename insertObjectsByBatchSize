@@ -1,0 +1,41 @@
+//Quando precisar inserir mais de 10.000 registros
+global class insertObjectsByBatchSize implements Queueable { 
+    global Integer BatchSize = 8000;
+    private List<SObject> recordList;
+    private insertObjectsByBatchSize followupJob;
+
+    global insertObjectsByBatchSize(List<SObject> recordList) {
+        this.recordList = recordList;
+    }
+
+    // Process the records
+    global void execute(QueueableContext context) {         
+        if (recordList == null || recordList.isEmpty()) { return; }
+
+        Integer size = this.recordList.size();      
+        Schema.SObjectType sObjectType = recordList.getSObjectType();
+
+        List<SObject> activeBatch = (List<SObject>)Type.forName('List<' + sObjectType + '>').newInstance();
+        System.debug('insertObjectsByBatchSize for ' + size + ' ' + sObjectType + ' records.');
+
+        if (size > BatchSize) {
+            // take the last <BatchSize> records from the top and put the rest in the next queueable
+            for (Integer i = size-1; i >= size-BatchSize; i--) {
+                activeBatch.add(this.recordList.remove(i));
+            }
+            followupJob = new insertObjectsByBatchSize(this.recordList);
+
+        } else {
+            activeBatch = this.recordList;
+        }
+        
+        System.debug(LoggingLevel.INFO, 'Inserting ' + activeBatch.size() + ' ' + sObjectType + ' records.');
+        insert activeBatch;        
+
+        if (followupJob != null) {
+            // if(!Test.isRunningTest()) {                        
+                System.enqueueJob(followupJob);
+            // }
+        }
+    }
+}
