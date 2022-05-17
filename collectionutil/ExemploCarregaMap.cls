@@ -14,3 +14,5 @@ public class ExemploCarregaMap {
         }        
     }
 }
+
+//se quiser usar map<Id, List> use esse link como referencia: https://salesforce.stackexchange.com/questions/376261/how-to-assemble-a-map-that-has-a-list-inside/376262#376262
