@@ -1,6 +1,3 @@
-nessa planilha tem o comparativo de cada algoritmo: https://docs.google.com/spreadsheets/d/1-755epxXQKsFjNiDhq76_5MKcl8_Mcj4Tbb5qM-8cXU/edit?usp=sharing
-e abaixo explicacoes dos algoritmos:
-
 BUSCA NORMAL / LINEAR
 compara elemento por elemento, da esquerda pra direita
 no melhor caso esta na posicao 1, no pior caso esta na ultima, q pode ser 1000 elementos
