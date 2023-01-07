@@ -1,0 +1,54 @@
+nessa planilha tem o comparativo de cada algoritmo: https://docs.google.com/spreadsheets/d/1-755epxXQKsFjNiDhq76_5MKcl8_Mcj4Tbb5qM-8cXU/edit?usp=sharing
+e abaixo explicacoes dos algoritmos:
+
+BUSCA NORMAL / LINEAR
+compara elemento por elemento, da esquerda pra direita
+no melhor caso esta na posicao 1, no pior caso esta na ultima, q pode ser 1000 elementos
+
+O(n)
+
+---------------------
+
+BUSCA BINARIA:
+imagina q temos 1 array com 10 elementos
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+e em uma busca binaria queremos encontrar o numero 10
+
+o algoritmo iria chutar um meio, ou seja, posicao 5
+e iria ver se o elemento q queremos esta na direita ou na esquerda
+
+nesse caso esta na direita, entao o algoritmo iria discartar toda a parte da esquerda
+sobrando apenas [5, 6, 7, 8, 9, 10]
+
+novamente iria chutar um meio, checar direita esquerda e ir discartando ate encontrar o numero desejado
+O(log n)
+
+se eu tenho 2048 elementos no array, 2 elevado a que numero é 2048? 11, entao vou precisar de 11 operacoes
+ou seja, log na base 2
+o numero de operacoes vai crescer de acordo com o log do numero de elementos
+
+---------------------
+
+MERGE SORT
+O(n log n) 
+significa: n * log(n)
+
+---------------------
+
+SELECTION SORT
+O(n^2)
+numero de elementos elevado a 2
+
+---------------------
+
+QUICK SORT
+
+esse algoritmo trabalha com PIVÔ, entao por exemplo, eu tenho uma lista de notas
+e quero encontrar todos q sao menores e maiores que o PIVO
+o PIVO vai mudando a cada divisão dessa
+a imagem irá ilustrar melhor o funcionamento
+
+O(n log n)
+mas no pior caso ele fica O(n^2)
+numero de elementos elevado a 2
