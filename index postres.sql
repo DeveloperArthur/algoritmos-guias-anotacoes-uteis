@@ -1,3 +1,5 @@
+-- link: https://onecompiler.com/postgresql/3yva6eefa
+
 CREATE TABLE instrutor (
   id SERIAL PRIMARY KEY, 
   nome VARCHAR (255) NOT NULL, 
