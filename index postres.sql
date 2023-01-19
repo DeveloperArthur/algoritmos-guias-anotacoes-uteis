@@ -1,4 +1,8 @@
 -- link: https://onecompiler.com/postgresql/3yva6eefa
+-- minhas duvidas sobre index: 
+--https://cursos.alura.com.br/forum/topico-duvida-para-qual-campo-devemos-criar-o-indice-266820
+--https://cursos.alura.com.br/forum/topico-duvida-e-quando-indice-nao-resolve-266823
+--https://cursos.alura.com.br/forum/topico-duvida-indice-b-tree-para-campo-com-baixa-cardinalidade-266822
 
 CREATE TABLE instrutor (
   id SERIAL PRIMARY KEY, 
