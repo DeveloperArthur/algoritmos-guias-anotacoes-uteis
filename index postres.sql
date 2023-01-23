@@ -1,4 +1,5 @@
 -- link: https://onecompiler.com/postgresql/3yva6eefa
+-- link: https://onecompiler.com/postgresql/3yvrycyf3
 -- minhas duvidas sobre index: 
 --https://cursos.alura.com.br/forum/topico-duvida-para-qual-campo-devemos-criar-o-indice-266820
 --https://cursos.alura.com.br/forum/topico-duvida-e-quando-indice-nao-resolve-266823
@@ -37,3 +38,42 @@ reindex table instrutor;
 
 -- rodando a mesma query de novo
 explain analyze select * from instrutor where salario > 1500;
+
+-- outro exemplo
+Create table test_normal (
+  empno varchar(10), 
+  ename varchar(30), 
+  sal numeric(10), 
+  faixa varchar(10)
+);
+
+DO $$ 
+  DECLARE 
+  BEGIN 
+    FOR I IN 1..200000 LOOP 
+      Insert into test_normal values(
+        to_char(i, 'FM999999999999999999'), 
+        'md5(random()::text)', 
+        random() * 10 + 1, 
+        'ND'
+      ); 
+    END LOOP;      
+  END;        
+$$;
+
+Create table test_random 
+as
+select /*+ append */ * from test_normal order by random();
+
+-- SEM INDICE
+explain analyze SELECT * FROM TEST_RANDOM where empno = '165076';
+-- Execution Time: 24.497 ms / cost: 2521.34
+
+CREATE INDEX IDX_RANDOM_1 ON TEST_RANDOM(EMPNO);
+
+-- COM INDICE
+explain analyze SELECT * FROM TEST_RANDOM where empno = '165076';
+--  Execution Time: 0.091 ms / cost: 19.92
+
+
+
