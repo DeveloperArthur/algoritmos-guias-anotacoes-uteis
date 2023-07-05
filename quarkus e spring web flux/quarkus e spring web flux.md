@@ -28,6 +28,8 @@ Obs: programação paralela é vc com 1 classe Main startar 3 threads para rodar
 
 programação reativa é ir reagindo conforme as respostas vao chegando, lidar com fluxos de dados conforme forem chegando, ou seja, executar codigos quando a gente receber essas mensagens, reagir a esses eventos,
 
+meu melhor exemplo de programação paralela: https://github.com/DeveloperArthur/golang-first-api-rest/blob/main/service/calcula_folha_pagamento.go
+
 quarkus:
 
 container first, ou seja, feito para apps q vao rodar em container
