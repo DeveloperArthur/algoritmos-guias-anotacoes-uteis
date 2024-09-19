@@ -24,6 +24,9 @@ vamos supor que vc faça 2 requisicoes, e que uma dure 3 segundos, e a outra dur
 
 Enquanto uma requisição é feita, a outra já está sendo enviada, mesmo sem a resposta da primeira, sem bloquear o processador. Essa é a ideia por trás da programação assíncrona
 
+[Existe outro problema que pode ser solucionado com "I/O nao bloqueante" tambem, não é bem I/O nao bloqueante, mas 
+dá pra considerar, pois é um problema bloqueante de I/O...](https://github.com/DeveloperArthur/arquitetura-escalabilidade-com-php?tab=readme-ov-file#melhorando-disponibilidade-da-aplica%C3%A7%C3%A3o)
+
 Obs: programação paralela é vc com 1 classe Main startar 3 threads para rodarem paralelamente fazendo coisas diferentes, e programação assincrona seria aquela ideia de apertar 1 botao na tela e nao ter q ficar esperando a resposta, vai executar por baixo dos panos e me avisar quando foi concluido, tipo mensageria, enfileiramento, jobs, execução em segundo plano sem prender o usuario, só q no caso da programação reativa essas 2 coisas se combinam
 
 programação reativa é ir reagindo conforme as respostas vao chegando, lidar com fluxos de dados conforme forem chegando, ou seja, executar codigos quando a gente receber essas mensagens, reagir a esses eventos,
