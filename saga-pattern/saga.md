@@ -1,6 +1,6 @@
 # Saga Pattern
 
-![img](saga.png)
+![img](./assets/saga.png)
 
 Para entendermos o que é o Saga Pattern, primeiro precisamos entender o que são
 **Transações Distribuídas**:
@@ -10,13 +10,13 @@ outro, imagina um fluxo de compra com microsserviço de pedido, ele recebe a req
 e chama o microsserviço de pagamentos, faz o pagamento, salva no banco e chama o microsserviço
 de produto que atualiza o estoque...
 
-![img](transacoes-distribuidas.png)
+![img](./assets/transacoes-distribuidas.png)
 
 E se der erro na hora do microsserviço de pagamento chamar o microsserviço de produto? Teremos
 dados inconsistentes... Pois tanto o microsserviço de pedido como o microsserviço de pagamento já
 realizaram suas ações e já salvaram nos seus bancos de dados...
 
-![img](dados-inconsistentes.png)
+![img](./assets/dados-inconsistentes.png)
 
 Não podemos descartar esse problema, como se não fosse acontecer, isso pode acontecer e [a rede
 não é confiável](https://www.linkedin.com/feed/update/urn:li:activity:7030252898076798976), e se
@@ -28,7 +28,7 @@ Distribuídas
 
 ### Soluções para lidar com esse problema
 
-![img](3-solucoes.png)
+![img](./assets/3-solucoes.png)
 
 - Saga Pattern orquestrado
 - Saga Pattern coreografado
@@ -42,7 +42,7 @@ Esse pattern demanda muita complexidade, porém resolve um problema específico
 
 ### Orquestrado
 
-![img](orquestrado.png)
+![img](./assets/orquestrado.png)
 
 Um microsserviço será responsável por orquestrar, o orquestrador conhece o fluxo, ele sabe a
 sequência de quais microsserviços chamar, e no caso de uma falha, ele sabe para quem tem que
@@ -50,7 +50,7 @@ devolver o evento pra desfazer a alteração, se der erro no microsserviço de e
 microsserviço de estoque vai devolver ERRO pro orquestrador, e o orquestrador vai mandar de volta
 pros outros microsserviços pra eles desfazer as alterações que foram feitas
 
-![img](rollback-orquestrado.png)
+![img](./assets/rollback-orquestrado.png)
 
 Os microsserviço devem ser independentes, eles não devem se conhecer, não devem saber quem é o
 próximo ou o anterior
@@ -61,7 +61,7 @@ O orquestrado é recomendado quando já se tem uma arquitetura de microsserviço
 
 ### Coreografado
 
-![img](coreografado.png)
+![img](./assets/coreografado.png)
 
 Ao contrário do orquestrado, aqui o próprio microsserviço tem conhecimento dos próximos
 microsserviço que serão executados na ordem conforme a resposta
@@ -69,7 +69,7 @@ microsserviço que serão executados na ordem conforme a resposta
 E cada microsserviço sabe que em caso de falha, ele deve dar um rollback nele mesmo e mandar o
 evento de erro de volta pro microsserviço anterior
 
-![img](rollback-coreografado.png)
+![img](./assets/rollback-coreografado.png)
 
 O coreografado é recomendado para arquiteturas que ainda estão em estágio inicial de desenvolimento
 
@@ -77,7 +77,7 @@ O coreografado é recomendado para arquiteturas que ainda estão em estágio ini
 
 ## SEC (Saga Execution Controller)
 
-![img](sec.png)
+![img](./assets/sec.png)
 
 Utilizando Saga Pattern vamos precisar de uma classe SEC, que é a implementação do Saga
 
@@ -93,7 +93,7 @@ só vai fazer o redirecionamento
 
 ## Duplicidade de eventos e Idempotência
 
-![img](idempotencia.png)
+![img](./assets/idempotencia.png)
 
 Para resolver o problema de duplicidade de eventos, é necessário implementar um mecanismo de
 idempotência. Isso garante que uma mesma operação não seja processada mais de uma vez,
@@ -168,7 +168,7 @@ está sendo feita 100% através de reação, ou seja, sistemas reagindo a outros
 
 ## Fluxo a fluxo (caso de falha)
 
-![img](dados-inconsistentes.png)
+![img](./assets/dados-inconsistentes.png)
 
 Orquestrador:
 - Orquestrador inicializa, envia evento para produto, produto retorna sucesso para 
@@ -185,7 +185,7 @@ Orquestrador:
 
 ## Kafka vs RabbitMQ
 
-![img](kafka-vs-rabbitmq-1.webp)
+![img](./assets/kafka-vs-rabbitmq-1.webp)
 
 Kafka é desenhado para entregar de maneira distribuída, particionada e altamente escalável, e
 mesmo que o RabbitMQ também possa ser escalado verticalmente, ele é mais recomendado para cargas
