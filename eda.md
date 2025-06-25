@@ -25,5 +25,5 @@
 - Sobre ter Produtor e Consumidor na mesma App: https://forum.casadocodigo.com.br/t/arquitetura-orientada-a-eventos-sobre-ter-produtor-e-consumidor-na-mesma-app/2331
 - Fila vs Tópico e o pattern one-to-many: https://forum.casadocodigo.com.br/t/arquitetura-orientada-a-eventos-fila-vs-topico-e-o-pattern-one-to-many/2330
 - Dúvida sobre o pattern fire-and-forget: https://forum.casadocodigo.com.br/t/arquitetura-orientada-a-eventos-duvida-sobre-o-pattern-fire-and-forget/2332
-- Onde está o Event Sourcing na Figura 3.20: https://forum.casadocodigo.com.br/t/arquitetura-orientada-a-eventos-onde-esta-o-event-sourcing-na-figura-3-20/2333
+- Onde está o Event Sourcing na Figura 3.20 / O que é Event Store: https://forum.casadocodigo.com.br/t/arquitetura-orientada-a-eventos-onde-esta-o-event-sourcing-na-figura-3-20/2333
 
