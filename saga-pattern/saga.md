@@ -33,6 +33,7 @@ Distribuídas
 - Saga Pattern orquestrado
 - Saga Pattern coreografado
 - Transactional Outbox
+- [2 Phase Commit](https://github.com/DeveloperArthur/algoritmos-guias-anotacoes-uteis/blob/main/saga-pattern/2pc.md)
 
 O Saga é um pattern com objetivo de garantir a execução de sucesso de um fluxo de transações, e
 também garantir que em caso de falha, todas as alterações sejam desfeitas na sequência que foram
